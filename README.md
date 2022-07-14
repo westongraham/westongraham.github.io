@@ -82,7 +82,7 @@ See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Weston Graham - [linkedin-url](https://twitter.com/twitter_handle) - westongraham11@gmail.com
+Weston Graham - [linkedin](https://linkedin.com/westongraham) - westongraham11@gmail.com
 
 Project Link: [https://github.com/westongraham/westongraham.github.io](https://github.com/westongraham/westongraham.github.io)
 
