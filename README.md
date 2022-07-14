@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/westongraham/westongraham.github.io">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/bigLogo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Portfolio Website</h3>
@@ -73,7 +73,7 @@
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -115,4 +115,4 @@ Project Link: [https://github.com/westongraham/westongraham.github.io](https://g
 [license-url]: https://github.com/westongraham/westongraham.github.io/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/westongraham
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/WebsiteProject.jpg
