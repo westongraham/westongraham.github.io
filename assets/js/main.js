@@ -1,8 +1,3 @@
-/*
-	Editorial by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 (function($) {
 
@@ -77,11 +72,11 @@
 			breakpoints.on('<=large', function() {
 				$sidebar.addClass('inactive');
 			});
-
+			/*
 			breakpoints.on('>large', function() {
 				$sidebar.removeClass('inactive');
 			});
-
+			*/
 		// Hack: Workaround for Chrome/Android scrollbar position bug.
 			if (browser.os == 'android'
 			&&	browser.name == 'chrome')
@@ -260,3 +255,9 @@
 			});
 
 })(jQuery);
+
+/*
+	Editorial by HTML5 UP
+	html5up.net
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
