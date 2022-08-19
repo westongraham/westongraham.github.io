@@ -54,7 +54,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://westongraham.github.io.com)
+[![websitePreview.jpg][product-screenshot]](https://westongraham.github.io.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
