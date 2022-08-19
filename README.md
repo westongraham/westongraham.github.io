@@ -65,7 +65,8 @@
 * HTML
 * CSS
 * Javascript
-
+* HTML5UP Template
+* Formspree API
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
