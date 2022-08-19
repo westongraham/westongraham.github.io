@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/westongraham/westongraham.github.io">
-    <img src="images/PersonalLogo.png" alt="Logo" width="80" height="80">
+    <img src="images/WLogo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Portfolio Website</h3>
