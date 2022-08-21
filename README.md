@@ -116,4 +116,4 @@ Project Link: [https://github.com/westongraham/westongraham.github.io](https://g
 [license-url]: https://github.com/westongraham/westongraham.github.io/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/westongraham
-[product-screenshot]: images/WebsiteProject.jpg
+[product-screenshot]: images/Websiteimg.png
