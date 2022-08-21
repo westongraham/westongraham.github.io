@@ -54,7 +54,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![websitePreview.jpg][product-screenshot]](https://westongraham.github.io.com)
+[![product-screenshot][product-screenshot]](https://westongraham.github.io.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -116,4 +116,4 @@ Project Link: [https://github.com/westongraham/westongraham.github.io](https://g
 [license-url]: https://github.com/westongraham/westongraham.github.io/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/westongraham
-[product-screenshot]: images/WebsitePreview.jpg
+[product-screenshot]: images/websitePreview.jpg
