@@ -23,7 +23,7 @@
     <a href="https://github.com/westongraham/westongraham.github.io"><strong>View Repository »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/westongraham/westongraham.github.io">View Demo</a>
+    <a href="https://westongraham.github.io/" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/westongraham/westongraham.github.io/issues">Report Bug</a>
     ·
@@ -65,7 +65,6 @@
 * HTML
 * CSS
 * Javascript
-* HTML5UP Template
 * Formspree API
 
 <p align="right">(<a href="#top">back to top</a>)</p>
