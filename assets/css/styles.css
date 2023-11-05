@@ -351,6 +351,50 @@ footer {
   margin: 10px;
 }
 
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Add styles for the header, navigation, and article */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.article {
+  margin: 20px 0;
+}
+
+.article-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px auto; /* Center the article title horizontally */
+  text-align: center; /* Center the text within the article title */
+}
+
+.article-meta {
+  font-size: 14px;
+  color: #777;
+  margin: 10px auto; /* Center the article title horizontally */
+  text-align: center; /* Center the text within the article title */
+}
+
+.article-content {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 /* Media queries for responsiveness */
 @media screen and (max-width: 720px) {
   nav {
