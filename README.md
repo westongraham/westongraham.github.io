@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/westongraham/westongraham.github.io">
-    <img src="assets/images/logoWG.png" alt="Logo" width="80" height="80">
+    <img src="./Assets/images/AIGenSelfie-circle.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Portfolio Website</h3>
@@ -116,3 +116,5 @@ Project Link: [https://github.com/westongraham/westongraham.github.io](https://g
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/westongraham
 [product-screenshot]: images/websitePreview.jpg
+
+
