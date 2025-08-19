@@ -1,0 +1,607 @@
+/* Reset & Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background: #f4f5f7;
+  /* softer light background */
+  scroll-behavior: smooth;
+  transition: background 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* optional spacing between items */
+  padding: 1rem 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: #1f2937;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+/* Push nav and toggle to opposite ends */
+.logo {
+  margin-right: auto;
+  /* logo stays on left, everything else on right */
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo span {
+  color: #2563eb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Make dark toggle sit at the far right */
+.dark-toggle {
+  margin-left: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #2563eb;
+  transition: color 0.3s;
+}
+
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Dark mode toggle */
+.dark-toggle {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #2563eb;
+  transition: color 0.3s;
+}
+
+body.dark-mode .dark-toggle {
+  color: #facc15;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #f3f4f6, #e0e7ff);
+  /* softer, professional gradient */
+  color: #111827;
+  text-align: center;
+  padding: 10rem 1rem 6rem;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  margin: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn.primary:hover {
+  background: #1e40af;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #2563eb;
+  color: #2563eb;
+}
+
+.btn.secondary:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+/* Sections */
+.section {
+  padding: 3rem 0;
+}
+
+h2 {
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #2563eb;
+}
+
+/* About Section */
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-text {
+  flex: 2;
+  min-width: 280px;
+}
+
+/* Work Experience Timeline */
+.experience-item {
+  background: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+}
+
+.experience-item h3 {
+  color: #2563eb;
+  margin-bottom: 0.25rem;
+}
+
+.experience-item span {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.experience-item ul {
+  margin-top: 0.5rem;
+  padding-left: 1.25rem;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 2px;
+  height: 100%;
+  background: #2563eb;
+}
+
+.timeline-event {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+}
+
+.timeline-event::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #2563eb;
+  border-radius: 50%;
+  border: 2px solid #f4f5f7;
+  box-sizing: border-box;
+}
+
+.timeline-date {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+/* Education & Certifications */
+.education-container {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.education-container:hover {
+  transform: translateY(-5px);
+}
+
+.education-text {
+  flex: 1 1 250px;
+}
+
+.certifications {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.edu-img {
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.edu-img:hover {
+  transform: scale(1.05);
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.skill {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.skill:hover {
+  transform: translateY(-3px);
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.project-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.project-links a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.project-links a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* Contact */
+.contact-container {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin-top: 1.5rem;
+  margin-bottom: 7rem;
+  /* add extra space after the box */
+  transition: transform 0.3s, background 0.3s;
+}
+
+.contact-container:hover {
+  transform: translateY(-5px);
+}
+
+.contact-list a {
+  color: #2563eb;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 6rem;
+  /* move it above the hire button */
+  right: 2rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 2001;
+  /* higher than Hire Me button */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+#back-to-top:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+body.dark-mode #back-to-top {
+  background: #facc15;
+  color: #1f2937;
+}
+
+body.dark-mode #back-to-top:hover {
+  background: #eab308;
+}
+
+
+/* Footer */
+footer {
+  background: #2563eb;
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+body.dark-mode .navbar {
+  background: #1f2937;
+}
+
+body.dark-mode .nav-links a {
+  color: #e5e7eb;
+}
+
+body.dark-mode .experience-item,
+body.dark-mode .education-container,
+body.dark-mode .project-card,
+body.dark-mode .skill {
+  background: #1f2937;
+  color: #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .timeline {
+  border-left-color: #facc15;
+}
+
+body.dark-mode .timeline-event::before {
+  background: #facc15;
+  border-color: #111827;
+}
+
+body.dark-mode .edu-img {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode footer {
+  background: #1f2937;
+}
+
+/* Dark mode Hero Section */
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  /* dark professional gradient */
+  color: #e5e7eb;
+  /* lighter text for contrast */
+}
+
+/* Contact Section Box Dark Mode */
+body.dark-mode .contact-container {
+  background: #1f2937;
+  /* matches dark mode background */
+  color: #e5e7eb;
+  /* readable text color */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  /* subtle shadow for depth */
+}
+
+/* Ensure links inside contact box also update */
+body.dark-mode .contact-container a {
+  color: #facc15;
+  /* accent color for links in dark mode */
+}
+
+body.dark-mode .contact-container a:hover {
+  color: #ffd633;
+}
+
+.nav-links a.active-link {
+  color: #1d4ed8;
+  /* brighter blue */
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 2px;
+}
+
+/* Active link highlight */
+.nav-links a.active-link {
+  color: #1e40af;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 2px;
+}
+
+/* Floating Hire Me Button */
+#hire-me-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #2563eb;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 2000;
+}
+
+#hire-me-btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+body.dark-mode #hire-me-btn {
+  background: #facc15;
+  color: #1f2937;
+}
+
+body.dark-mode #hire-me-btn:hover {
+  background: #eab308;
+}
+
+
+/* Responsive */
+@media(max-width: 768px) {
+  .about-grid {
+    flex-direction: column;
+  }
+
+  .certifications {
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  body.dark-mode .nav-links {
+    background: #1f2937;
+  }
+
+
+
+}

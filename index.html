@@ -2,223 +2,341 @@
 <html lang="en">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJPXSGM6B2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weston Graham | Software Engineer</title>
+  <link rel="icon" href="assets/favicon/favicon.ico" type="image/x-icon">
 
-      gtag('config', 'G-HJPXSGM6B2');
-    </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-  <link rel="stylesheet" href="/Home/home.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon/favicon.ico">
-  <script src="https://kit.fontawesome.com/53b6dc5a41.js" crossorigin="anonymous"></script>
-
-
-  <title> Weston Graham | Home </title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- Intro Infomation -->
+  <header class="navbar" data-aos="fade-down">
+    <div class="container nav-container">
+      <h1 class="logo">Weston <span>Graham</span></h1>
 
-  <header class="header">
-
-    <article class="intro">
-
-      <!-- <div class="intro-info">
-        <i class="fas fa-map-marker-alt"></i>
-        <p>Something</p>
-      </div>
-      <div class="intro-info">
-        <i class="fas fa-clock"></i>
-        <p>Something here</p>
-      </div>
-      <div class="intro-info"><i class="fas fa-phone-alt"></i>
-        <a href="#">
-          <p>+1-123-456-7890</p>
-        </a> -->
+      <!-- Hamburger -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
-    </article>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-    <hr>
-
-    <!-- Navigationbar -->
-
-    <nav class="navbar">
-      <a href="index.html">
-        <h2 class="logo">Weston <span class="primary-text">Graham</span> <br> <span class="small-text">Software
-            Dev</span> </h2>
-      </a>
-      <ul>
-        <a href="index.html">
-          <li>Home</li>
-        </a>
-        <a href="../About/about.html">
-          <li>About</li>
-        </a>
-        <a href="../Projects/projects.html">
-          <li>Projects</li>
-        </a>
-        <a href="../Gallery/gallery.html">
-          <li>Gallery</li>
-        </a>
-        <a href="../Contact/contact.html">
-          <li>Contact </li>
-        </a>
-      </ul>
-    </nav>
-
-    <!-- Header Text -->
-
-    <div class="hero">
-      <h1>Hi! I'm Weston</h1>
-      <h2>I create technology solutions to solve challenges,<br>one line at a time.</h2>
-      <a href="../Projects/projects.html" class="btn">My Projects</a>
+      <!-- Dark Mode Toggle -->
+      <div class="dark-toggle" id="dark-toggle">
+        <i class="fas fa-moon"></i>
+      </div>
     </div>
-
   </header>
 
-  <!-- About -->
-
-  <section class="third-container">
-
-    <article class="about-text">
-
-      <h2>About <span class="primary-text"> Me</span></h2>
-      <p>
-        I work in the tech industry with a focus on building creative solutions through code.<br>
-        I graduated a bachelors of science in information technology.<br><br>
-
-        When I'm not coding, I consider myself a hobby collector. I enjoy working out, <br> staying active, and
-        passionately supporting the Oklahoma City Thunder.<br></p>
-      <a href="../About/about.html" class="btn">Read More</a>
-    </article>
-  </section>
-
-  <!--Testimonials-->
-
-
-  <section class="testiomonials">
-
-    <h2>Chat with Wes-<span class="primary-text">AI</span> (Coming soon)</h2>
-
-    <main class="client">
-      <div>
-        <img src="../Assets/images/AIGenSelfie-circle.png" alt="">
+  <!-- Hero Section -->
+  <section class="hero" data-aos="fade-up">
+    <div class="container hero-content">
+      <h2>Weston Graham</h2>
+      <p>Software Engineer | Problem Solver | Builder</p>
+      <p id="typing-text" white-space: nowrap;>I build clean, scalable, and impactful software solutions.</p>
+      <div class="hero-buttons">
+        <a href="assets/files/WestonGraham_Resume_2025.pdf" target="_blank" class="btn primary">Download Resume</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
       </div>
-      <div>
-        <h3>Wes-AI</h3>
-        <p>Hi I am Wes-AI, Weston's personal A.I. chat bot. I am currently still under development.
-          Check back here for more updates regarding my status! Once I am up and running, I will be used 
-        as your tour guide to Weston's website.</p>
-      </div>
-    </main>
-  </section>
-
-
-  <!-- Contact Us -->
-
-  <section class="contact-us">
-
-    <main class="contact-form">
-      <form action="https://formspree.io/f/xeqndbbn" method="POST">
-
-        <h2>Get in touch with <span class="primary-text">Me</span></h2>
-
-        <div>
-          <input type="First Name:" placeholder="First Name:"> <span class="name"> <input type="name" name="name"
-              placeholder="Last Name:"></span>
-        </div>
-
-        <div>
-          <input type="email" name="Email" placeholder="Email:"> <span class="name"> <input type="text" name="text"
-              placeholder="Phone:"></span>
-        </div>
-
-        <div>
-          <textarea name="Message" cols="30" rows="10" placeholder="Message:"></textarea>
-        </div>
-
-    </main>
-
-    <div class="button">
-
-      <button aria-label="Send">Send!</button>
-      </form>
     </div>
-
   </section>
 
-  <!-- Footer -->
-
-  <footer class="footer">
-
-    <main class="logo-social-media">
-      <div>
-        <h2>Weston <span class="primary-text">Graham</span></h2>
+  <!-- About Section -->
+  <section id="about" class="section" data-aos="fade-up">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          I’m a Software Engineer with a Bachelor’s in Information Technology. Experienced in full-stack development
+          (.NET/C#, Vue.js, SQL), Salesforce, and ServiceNow. I have led Agile teams as Scrum Master, built REST APIs,
+          and developed solutions to improve business workflows.
+        </p>
       </div>
-      <div>
-        <a href="https://www.linkedin.com/in/westongraham" target="_blank" style="color:#FFFFFF"> <i
-            class="fa-brands fa-linkedin-in fa-xl"></i> </a>
-        <a href="https://github.com/westongraham" target="_blank" style="color:#FFFFFF"><i
-            class="fa-brands fa-github fa-lg"></i></a>
-        <a href="mailto:westongraham11@gmail.com" target="_blank" style="color:#FFFFFF"><i
-            class="fa-solid fa-envelope"></i></a>
-        <a href="https://westongraham.hashnode.dev/" target="_blank" style="color:#FFFFFF"><i
-            class="fa-brands fa-hashnode"></i></a>
-      </div>
-      <div class="copyright">
-        <p>© 2024 Weston Graham.</p>
-      </div>
-    </main>
+    </div>
+  </section>
 
-    <aside class="explore">
-      <h3>Explore</h3>
-      <div>
+  <!-- Work Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up">Work Experience</h2>
+
+      <div class="experience-item" data-aos="fade-up">
+        <h3>ArcBest Technologies</h3>
+        <span>Fort Smith, AR</span>
+        <div class="timeline">
+          <div class="timeline-event">
+            <span class="timeline-date">May 2023 - Present</span>
+            <p>Product Support Specialist</p>
+            <ul>
+              <li>Developed and supported full-stack applications using .NET (C#), Vue.js, SQL, Salesforce (Apex, SOQL),
+                and ServiceNow.</li>
+              <li>Led Agile ceremonies as Scrum Master, driving team velocity and sprint outcomes.</li>
+              <li>Built and integrated REST APIs for automation and platform connectivity.</li>
+              <li>Maintained customer service and sales platforms, improving performance and business workflows.</li>
+            </ul>
+          </div>
+          <div class="timeline-event">
+            <span class="timeline-date">Jan 2022 - May 2023</span>
+            <p>Information Systems / Info Center Student Worker</p>
+            <ul>
+              <li>Created custom ServiceNow applications to support ABF and ArcBest operations.</li>
+              <li>Streamlined workflows to boost efficiency and user satisfaction.</li>
+              <li>Provided ongoing support and enhancements for key ServiceNow solutions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-item" data-aos="fade-up">
+        <h3>ArcBest</h3>
+        <span>Fort Smith, AR | Jan 2021 - Jan 2022</span>
+        <p>Carrier Sales Support Specialist</p>
         <ul>
-          <a href="../index.html">
-            <li>Home</li>
-          </a>
-          <a href="../About/about.html">
-            <li>About</li>
-          </a>
-          <a href="../Projects/projects.html">
-            <li>Projects</li>
-          </a>
-          <a href="../Gallery/gallery.html">
-            <li>Gallery</li>
-          </a>
-          <a href="../Contact/contact.html">
-            <li>Contact</li>
-          </a>
+          <li>Resolved transit issues and improved delivery reliability through cross-functional communication.</li>
+          <li>Analyzed shipment disruptions and recommended process improvements.</li>
+          <li>Gained operational experience in logistics, collaboration, and customer satisfaction.</li>
         </ul>
       </div>
-    </aside>
+    </div>
+  </section>
 
+  <!-- Education & Certifications -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2>Education & Certifications</h2>
+      <div class="education-container" data-aos="fade-up">
+        <div class="education-text">
+          <h3>University of Arkansas Fort Smith</h3>
+          <p>Bachelor of Science in Information Technology - Programming</p>
+          <p>May 2023</p>
+          <p>Relevant Coursework: AI, Data Structures, Distributed Systems, Computer Architecture, Discrete Math</p>
+          <p>Project: Developed AutoFarm, a computer vision system using deep learning to track plant health and growth
+            stages. Designed a user-friendly web interface with React and Flask, to enhance crop yield through automated
+            monitoring.</p>
+        </div>
 
-    <aside class="newsletter">
-      <div class="news-info">
-        <h3>Newsletter (Coming Soon)</h3>
-        <p>Keep up with my always upcoming projects and <br> articles. Enter your e-mail and subscribe <br> to my
-          newsletter that I am currently developing.</p>
+        <div class="certifications">
+          <img src="Assets/images/diploma.jpg" alt="Bachelor's Diploma" class="edu-img">
+        </div>
       </div>
-      <div class="email">
-        <input type="email" name="Email" placeholder="Type your E-Mail"> <button type="submit">Subscribe</button>
+      <div class="education-container" data-aos="fade-up">
+        <div class="education-text">
+          <h3>Scaled Agile Framework (SAFe)</h3>
+          <p>Certified SAFe 6 Scrum Master</p>
+          <p>Demonstrates expertise in leading Agile teams, facilitating Scrum ceremonies, and supporting program-level
+            alignment in large-scale Agile environments.</p>
+        </div>
+        <div class="certifications">
+          <a href="Assets/files/CertifiedSAFe6ScrumMaster.pdf" target="_blank">
+            <img src="assets/images/CertifiedSAFe6ScrumMasterCert.jpg" alt="Scrum Master Certification" class="edu-img">
+          </a>
+        </div>
       </div>
-    </aside>
+    </div>
+  </section>
 
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 data-aos="fade-up">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill" data-aos="fade-up"><i class="fab fa-java"></i> Java</div>
+        <div class="skill" data-aos="fade-up"><i class="fab fa-python"></i> Python</div>
+        <div class="skill" data-aos="fade-up"><i class="fas fa-database"></i> SQL</div>
+        <div class="skill" data-aos="fade-up"><i class="fab fa-html5"></i> HTML/CSS</div>
+        <div class="skill" data-aos="fade-up"><i class="fab fa-js-square"></i> JavaScript</div>
+        <div class="skill" data-aos="fade-up"><i class="fab fa-vuejs"></i> Vue.js</div>
+        <div class="skill" data-aos="fade-up"><i class="fab fa-microsoft"></i> .NET (C#)</div>
+        <div class="skill" data-aos="fade-up"><i class="fas fa-network-wired"></i> REST APIs</div>
+        <div class="skill" data-aos="fade-up"><i class="fas fa-project-diagram"></i> Agile / Scrum / SAFe</div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="container" data-aos="fade-up">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="Assets/images/autoFarmPoster.png" alt="AutoFarm Project Poster">
+          <h4>AutoFarm</h4>
+          <p>Computer vision system to track plant health and growth stages with React and Flask web interface.</p>
+          <div class="project-links">
+            <a href="https://www.linkedin.com/pulse/autofarm-autonomous-crop-growth-anomaly-weston-graham?utm_source=share&utm_medium=guest_desktop&utm_campaign=copy"
+              target="_blank"><i class="fas fa-file"></i> Article</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="../Assets/images/projectTemplate.png" alt="Project 2">
+          <h4>Coming Soon</h4>
+          <p>Always learning and developing. Stay tuned for updates on future projects!</p>
+          <div class="project-links">
+            <a href="https://github.com/westongraham" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#">Live</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-container" data-aos="fade-up">
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:westongraham11@gmail.com">westongraham11@gmail.com</a></li>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/westongraham" target="_blank">in/westongraham</a></li>
+          <li>Website: <a href="https://westongraham.github.io" target="_blank">westongraham.github.io</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- Floating Hire Me Button -->
+  <a href="mailto:westongraham11@gmail.com" id="hire-me-btn"><i class="fas fa-envelope"></i> Hire Me</a>
+
+  <!-- Footer -->
+  <footer data-aos="fade-up">
+    <p>© 2025 Weston Graham. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const darkToggle = document.getElementById('dark-toggle');
+    const backToTop = document.getElementById('back-to-top');
+    const hireMeBtn = document.getElementById('hire-me-btn');
+    const navItems = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
+
+    // Hamburger toggle
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+
+    // Dark mode toggle
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      darkToggle.querySelector('i').classList.toggle('fa-sun');
+      darkToggle.querySelector('i').classList.toggle('fa-moon');
+    });
+
+    // Smooth scroll with navbar offset
+    navItems.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        const headerOffset = document.querySelector('.navbar').offsetHeight;
+        const elementPosition = target.offsetTop;
+        const offsetPosition = elementPosition - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('open');
+      });
+    });
+
+    // Active section highlighting
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+      navItems.forEach(link => {
+        link.classList.remove('active-link');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active-link');
+        }
+      });
+
+      // Back to top button
+      backToTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
+
+      // Hire Me button
+      hireMeBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Hero typing effect
+    // Hero typing effect
+const heroText = document.getElementById('typing-text');
+const staticWord = "I ";  // <-- This will always stay
+const dynamicWords = [
+  'build clean, scalable, and impactful software solutions.',
+  'turn complex challenges into simple, user-friendly code.'
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let typing = true;
+
+function typeEffect() {
+  const currentWord = dynamicWords[wordIndex];
+
+  if (typing) {
+    heroText.textContent = `${staticWord}${currentWord.slice(0, charIndex + 1)}`;
+    charIndex++;
+    if (charIndex === currentWord.length) {
+      typing = false;
+      setTimeout(typeEffect, 1500); // pause at full word
+      return;
+    }
+  } else if (!typing && charIndex === 0) {
+    heroText.textContent = staticWord; // static word stays
+    typing = true;
+    wordIndex = (wordIndex + 1) % dynamicWords.length;
+    setTimeout(typeEffect, 200);
+    return;
+  } else {
+    heroText.textContent = `${staticWord}${currentWord.slice(0, charIndex - 1)}`;
+    charIndex--;
+    if (charIndex === 0) {
+      typing = true;
+      wordIndex = (wordIndex + 1) % dynamicWords.length;
+    }
+  }
+  setTimeout(typeEffect, typing ? 100 : 100);
+}
+
+
+    typeEffect();
+  </script>
 </body>
 
 </html>
