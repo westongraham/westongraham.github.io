@@ -2,375 +2,1395 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weston Graham | Software Engineer</title>
+  <meta name="description"
+    content="Software engineer portfolio for Weston Graham featuring internal tools, full-stack systems, enterprise integrations, and product-focused case studies.">
   <link rel="icon" href="Assets/favicon/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f1ea;
+      --surface: rgba(255, 252, 246, 0.78);
+      --surface-strong: #fffaf3;
+      --surface-alt: #efe6d8;
+      --header-bg: rgba(248, 244, 237, 0.78);
+      --page-bg:
+        radial-gradient(circle at top left, rgba(184, 92, 56, 0.18), transparent 24rem),
+        radial-gradient(circle at 85% 20%, rgba(96, 128, 102, 0.16), transparent 20rem),
+        linear-gradient(180deg, #f8f4ed 0%, #f3eee5 55%, #f8f4ed 100%);
+      --grid-line: rgba(255, 255, 255, 0.18);
+      --grid-line-vertical: rgba(255, 255, 255, 0.14);
+      --text: #1f1b16;
+      --muted: #5f574c;
+      --line: rgba(61, 48, 31, 0.12);
+      --accent: #b85c38;
+      --accent-dark: #96472a;
+      --accent-soft: rgba(184, 92, 56, 0.14);
+      --shadow: 0 20px 60px rgba(76, 52, 27, 0.12);
+      --panel-soft: rgba(255, 250, 243, 0.92);
+      --button-secondary-bg: rgba(255, 250, 243, 0.92);
+      --button-secondary-border: rgba(61, 48, 31, 0.12);
+      --button-secondary-hover: #fffefb;
+      --button-secondary-hover-border: rgba(61, 48, 31, 0.22);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --max-width: 1000px;
+      --nav-height: 80px;
+    }
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    html[data-theme="dark"] {
+      --bg: #11161b;
+      --surface: rgba(20, 28, 35, 0.82);
+      --surface-strong: #1a232b;
+      --surface-alt: #1b252d;
+      --header-bg: rgba(17, 22, 27, 0.8);
+      --page-bg:
+        radial-gradient(circle at top left, rgba(224, 139, 97, 0.16), transparent 24rem),
+        radial-gradient(circle at 85% 20%, rgba(66, 110, 102, 0.16), transparent 20rem),
+        linear-gradient(180deg, #121920 0%, #10161c 55%, #121920 100%);
+      --grid-line: rgba(255, 255, 255, 0.05);
+      --grid-line-vertical: rgba(255, 255, 255, 0.04);
+      --text: #edf1f4;
+      --muted: #aab7c2;
+      --line: rgba(190, 205, 218, 0.12);
+      --accent: #e08b61;
+      --accent-dark: #f0a47f;
+      --accent-soft: rgba(224, 139, 97, 0.16);
+      --shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+      --panel-soft: rgba(27, 37, 45, 0.94);
+      --button-secondary-bg: rgba(27, 37, 45, 0.94);
+      --button-secondary-border: rgba(190, 205, 218, 0.14);
+      --button-secondary-hover: #24313b;
+      --button-secondary-hover-border: rgba(190, 205, 218, 0.22);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--text);
+      background: var(--page-bg);
+      min-height: 100vh;
+      transition: background 200ms ease, color 200ms ease;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line-vertical) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.22), transparent 75%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .site-shell {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 4.25rem 0;
+    }
+
+    .section-header {
+      display: grid;
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
+      max-width: 42rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.48rem;
+      height: 0.48rem;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(184, 92, 56, 0.14);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5.6vw, 4.2rem);
+      font-weight: 800;
+      max-width: 13ch;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+    }
+
+    h3 {
+      font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 0.7rem;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .brand {
+      font-family: "Manrope", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 0.95rem;
+      color: var(--muted);
+      transition: color 180ms ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.4rem;
+      width: 100%;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible,
+    .nav-links a.active {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    .theme-toggle {
+      width: 2.7rem;
+      height: 2.7rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel-soft);
+      color: var(--text);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      transform: translateY(-1px);
+      border-color: var(--button-secondary-hover-border);
+      background: var(--button-secondary-hover);
+      outline: none;
+    }
+
+    .theme-toggle svg {
+      width: 1.2rem;
+      height: 1.2rem;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .theme-icon-sun,
+    html[data-theme="dark"] .theme-icon-moon {
+      display: none;
+    }
+
+    html[data-theme="dark"] .theme-icon-sun {
+      display: block;
+    }
+
+    .hero {
+      padding: 4.25rem 0 2.75rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-panel,
+    .featured-card,
+    .case-study,
+    .experience-card,
+    .project-card,
+    .highlight-card,
+    .contact-card,
+    .education-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-copy {
+      padding: clamp(1.5rem, 3vw, 2.4rem);
+      display: grid;
+      gap: 1.1rem;
+      align-content: start;
+      height: 100%;
+    }
+
+    .hero-intro {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .hero-intro p {
+      max-width: 31rem;
+      font-size: 1rem;
+    }
+
+    .hero-metadata {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .meta-pill {
+      padding: 0.65rem 0.9rem;
+      border-radius: 14px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 2.85rem;
+      padding: 0 1.05rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: #fff8f2;
+      box-shadow: 0 14px 28px rgba(184, 92, 56, 0.22);
+    }
+
+    .button-primary:hover,
+    .button-primary:focus-visible {
+      background: var(--accent-dark);
+      box-shadow: 0 16px 30px rgba(150, 71, 42, 0.24);
+    }
+
+    .button-secondary {
+      background: var(--button-secondary-bg);
+      border-color: var(--button-secondary-border);
+      color: var(--text);
+    }
+
+    .button-secondary:hover,
+    .button-secondary:focus-visible {
+      background: var(--button-secondary-hover);
+      border-color: var(--button-secondary-hover-border);
+    }
+
+    .hero-panel {
+      padding: 1.1rem;
+      display: grid;
+      gap: 0.85rem;
+      overflow: hidden;
+      position: relative;
+      align-self: stretch;
+      height: 100%;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: auto -4rem -4rem auto;
+      width: 12rem;
+      height: 12rem;
+      background: radial-gradient(circle, rgba(184, 92, 56, 0.14), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-panel-image {
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 14.5rem;
+      border: 1px solid rgba(61, 48, 31, 0.08);
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255, 255, 255, 0.8), transparent 28%),
+        linear-gradient(135deg, #e7d3bc, #f8f1e6);
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-panel-image img {
+      width: min(84%, 18rem);
+      aspect-ratio: 1;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 28px rgba(76, 52, 27, 0.18));
+    }
+
+    .hero-panel-copy {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+
+    .stat {
+      padding: 0.85rem;
+      border-radius: 14px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.1;
+      color: var(--text);
+    }
+
+    .stat span {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .project-grid,
+    .education-grid {
+      display: grid;
+      gap: 1.15rem;
+    }
+
+    .project-card {
+      overflow: hidden;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .project-card:hover,
+    .project-card:focus-within,
+    .experience-card:hover,
+    .contact-card:hover,
+    .education-card:hover,
+    .what-copy:hover,
+    .what-summary:hover {
+      transform: translateY(-6px);
+      border-color: rgba(184, 92, 56, 0.22);
+      box-shadow: 0 24px 60px rgba(76, 52, 27, 0.16);
+    }
+
+    .card-media {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(61, 48, 31, 0.08);
+      background: linear-gradient(135deg, #ecd8c0, #f7efe3 72%, #ded3c5);
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 280ms ease;
+    }
+
+    .project-card:hover .card-media img {
+      transform: scale(1.03);
+    }
+
+    .card-body {
+      padding: 1.2rem;
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .card-body ul {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .card-topline {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .stack span,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.72rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .impact {
+      padding: 0.8rem 0.9rem;
+      border-radius: 14px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .what-i-do {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .what-copy,
+    .what-summary {
+      padding: 1.35rem;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .what-copy ul {
+      margin-top: 1rem;
+    }
+
+    .engineering-focus {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.15rem;
+    }
+
+    .focus-card {
+      padding: 1rem;
+      border-radius: 14px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+    }
+
+    .focus-card strong {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .focus-card p {
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+
+    .summary-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .summary-item {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(61, 48, 31, 0.08);
+    }
+
+    .summary-item:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.02rem;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .experience-card {
+      padding: 1.35rem;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .experience-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-header.company-header {
+      margin-bottom: 1.2rem;
+    }
+
+    .role-meta {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .role-meta p {
+      font-size: 0.95rem;
+    }
+
+    .date-pill {
+      white-space: nowrap;
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    .company-summary {
+      max-width: 36rem;
+    }
+
+    .role-progressions {
+      display: grid;
+      gap: 0;
+      margin-top: 0.35rem;
+      padding-left: 1.1rem;
+    }
+
+    .role-step {
+      position: relative;
+      padding: 0.35rem 0 1.1rem 1.1rem;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+    }
+
+    .role-step::before {
+      content: "";
+      position: absolute;
+      left: -0.25rem;
+      top: 0.9rem;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(184, 92, 56, 0.1);
+    }
+
+    .role-step::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.5rem;
+      bottom: -0.15rem;
+      width: 2px;
+      background: rgba(184, 92, 56, 0.18);
+    }
+
+    .role-step:last-child::after {
+      display: none;
+    }
+
+    .role-step:not(:last-child) {
+      border-bottom: 1px solid rgba(61, 48, 31, 0.08);
+      margin-bottom: 0.85rem;
+    }
+
+    .role-step-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .role-step-header h4 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .role-step ul {
+      padding-left: 1rem;
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-card ul {
+      margin-top: 0.1rem;
+    }
+
+    .project-links,
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .project-links a,
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--accent-dark);
+      font-weight: 700;
+      transition: color 180ms ease, transform 180ms ease;
+    }
+
+    .project-links a:hover,
+    .project-links a:focus-visible,
+    .contact-links a:hover,
+    .contact-links a:focus-visible {
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+
+    .education-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .education-card {
+      padding: 1.2rem;
+      display: grid;
+      gap: 0.85rem;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .education-card img {
+      width: 100%;
+      border-radius: 16px;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border: 1px solid rgba(61, 48, 31, 0.08);
+    }
+
+    .contact-card {
+      padding: 1.5rem;
+      display: grid;
+      gap: 1rem;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 42rem);
+      gap: 1.5rem;
+      align-items: start;
+      justify-content: center;
+    }
+
+    footer {
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 600ms ease, transform 600ms ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .what-i-do,
+      .project-grid,
+      .education-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-row {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .engineering-focus {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      :root {
+        --nav-height: 72px;
+      }
+
+      .site-shell {
+        width: min(calc(100% - 1.25rem), var(--max-width));
+      }
+
+      .nav {
+        padding: 0.85rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-controls,
+      .nav-links {
+        gap: 0.9rem;
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .experience-card,
+      .contact-card {
+        padding: 1.2rem;
+      }
+
+      .section {
+        padding: 3.5rem 0;
+      }
+
+      .experience-header,
+      .role-step-header,
+      .card-topline {
+        flex-direction: column;
+      }
+
+      .date-pill {
+        white-space: normal;
+      }
+
+      .stat-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-  <header class="navbar" data-aos="fade-down">
-    <div class="container nav-container">
-      <h1 class="logo">Weston <span>Graham</span></h1>
-
-      <!-- Hamburger -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Dark Mode Toggle -->
-      <div class="dark-toggle" id="dark-toggle">
-        <i class="fas fa-moon"></i>
+  <header class="site-header">
+    <div class="site-shell nav">
+      <a class="brand" href="#top">Weston <span>Graham</span></a>
+      <div class="nav-controls">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#what-i-do">What I Do</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Toggle color theme">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"></path>
+          </svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"></path>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" data-aos="fade-up">
-    <div class="container hero-content">
-      <h2>Weston Graham</h2>
-      <p>Software Engineer | Problem Solver | Builder</p>
-      <p id="typing-text" white-space: nowrap;>I build clean, scalable, and impactful software solutions.</p>
-      <div class="hero-buttons">
-        <a href="Assets/files/WestonGrahamResume2026.pdf" target="_blank" class="btn primary">View Resume</a>
-        <a href="#contact" class="btn secondary">Contact Me</a>
+  <main id="top">
+    <section class="hero">
+      <div class="site-shell hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow">Software Engineer</div>
+          <div class="hero-intro">
+            <h2>I build full-stack software that makes complex systems simpler to use, connect, and maintain.</h2>
+            <p>I work across .NET, Vue, SQL, Salesforce, and ServiceNow to turn messy workflows into software people can actually rely on.</p>
+          </div>
+          <div class="hero-metadata">
+            <div class="meta-pill">4+ years software engineering</div>
+            <div class="meta-pill">.NET / Vue / SQL / Salesforce</div>
+            <div class="meta-pill">Enterprise software / integrations</div>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">View My Work</a>
+            <a class="button button-secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="How Weston can help">
+          <figure class="hero-panel-image">
+            <img src="Assets/images/AIGenSelfie-circle.png" alt="Portrait illustration of Weston Graham">
+          </figure>
+          <div class="hero-panel-copy">
+            <h2>Where I Help</h2>
+            <p>I’m strongest where business workflows, internal platforms, and production engineering meet.</p>
+            <div class="stat-row">
+              <div class="stat">
+                <strong>Build</strong>
+                <span>.NET, Vue, SQL, and production systems</span>
+              </div>
+              <div class="stat">
+                <strong>Connect</strong>
+                <span>RESTful APIs, Salesforce, and ServiceNow</span>
+              </div>
+              <div class="stat">
+                <strong>Automate</strong>
+                <span>Manual steps, handoffs, and repeat work</span>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="section" data-aos="fade-up">
-    <div class="container about-grid">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>
-          I’m a Software Engineer with a Bachelor’s in Information Technology. Experienced in full-stack development
-          (.NET/C#, Vue.js, SQL), Salesforce, and ServiceNow. I have led Agile teams as Scrum Master, built REST APIs,
-          and developed solutions to improve business workflows.
-        </p>
+    <section class="section" id="what-i-do">
+      <div class="site-shell">
+        <div class="section-header reveal">
+          <div class="eyebrow">What I Do</div>
+          <h2>I build and maintain production software across the full stack.</h2>
+          <p>I work on the parts of software that make internal systems dependable: clean interfaces, reliable APIs, database-backed features, platform integrations, and practical problem solving when the path is unclear.</p>
+        </div>
+
+        <div class="what-i-do">
+          <div class="what-copy reveal">
+            <div class="engineering-focus">
+              <div class="focus-card">
+                <strong>Full-Stack Features</strong>
+                <p>I build user-facing tools with Vue, backend services with .NET/C#, and database-backed workflows with SQL.</p>
+              </div>
+              <div class="focus-card">
+                <strong>APIs &amp; Integrations</strong>
+                <p>I connect internal systems, Salesforce, ServiceNow, and business platforms through REST APIs and automation.</p>
+              </div>
+              <div class="focus-card">
+                <strong>Problem Solving</strong>
+                <p>I debug messy issues, break down unclear requirements, and turn operational pain points into maintainable software.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="what-summary reveal">
+            <div class="summary-list">
+              <div class="summary-item">
+                <strong>Engineering Strengths</strong>
+                <div class="skill-list">
+                  <span class="tag">.NET / C#</span>
+                  <span class="tag">Vue.js</span>
+                  <span class="tag">SQL</span>
+                  <span class="tag">REST APIs</span>
+                  <span class="tag">Salesforce</span>
+                  <span class="tag">ServiceNow</span>
+                  <span class="tag">Debugging</span>
+                  <span class="tag">Agile Delivery</span>
+                </div>
+              </div>
+              <div class="summary-item">
+                <strong>Best Environment</strong>
+                <p>Teams building internal platforms, customer-facing operations tools, and systems that need steady improvement after launch.</p>
+              </div>
+              <div class="summary-item">
+                <strong>What I Bring</strong>
+                <p>A practical engineering mindset: understand the problem, ship the fix, and keep improving the system.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Work Experience -->
-  <section id="experience" class="section">
-    <div class="container">
-      <h2 data-aos="fade-up">Work Experience</h2>
+    <section class="section" id="experience">
+      <div class="site-shell">
+        <div class="section-header reveal">
+          <div class="eyebrow">Experience</div>
+          <h2>My experience comes from building software for teams that rely on these systems every day.</h2>
+        </div>
 
-      <div class="experience-item" data-aos="fade-up">
-        <h3>ArcBest Technologies</h3>
-        <span>Fort Smith, AR</span>
-        <div class="timeline">
-          <div class="timeline-event">
-            <span class="timeline-date">Oct 2025 - Present</span>
-            <p>Product Support Specialist II</p>
+        <div class="experience-list">
+          <article class="experience-card reveal">
+            <div class="experience-header company-header">
+              <div class="role-meta">
+                <h3>ArcBest Technologies</h3>
+                <p>Fort Smith, AR</p>
+                <p class="company-summary"></p>
+              </div>
+              <div class="date-pill">January 2022 - Present</div>
+            </div>
+            <div class="role-progressions">
+              <section class="role-step">
+                <div class="role-step-header">
+                  <div class="role-meta">
+                    <h4>Product Support Specialist II (Software Engineering Focus)</h4>
+                  </div>
+                  <div class="date-pill">October 2025 - Present</div>
+                </div>
+                <ul>
+                  <li>Built and maintained production applications with .NET, Vue.js, SQL, Salesforce, and ServiceNow.</li>
+                  <li>Designed REST APIs and integrations that improved data flow between internal services and enterprise platforms.</li>
+                  <li>Contributed to a large-scale Salesforce Service Cloud rollout and owned systems tied to customer and revenue workflows.</li>
+                </ul>
+              </section>
+
+              <section class="role-step">
+                <div class="role-step-header">
+                  <div class="role-meta">
+                    <h4>Product Support Specialist I (Software Engineering Focus)</h4>
+                  </div>
+                  <div class="date-pill">May 2023 - October 2025</div>
+                </div>
+                <ul>
+                  <li>Developed and supported full-stack business applications using .NET, Vue.js, SQL, and ServiceNow.</li>
+                  <li>Maintained ServiceNow CSM and ITSM solutions for customer service and internal IT teams.</li>
+                  <li>Led Agile ceremonies as Scrum Master and shipped workflow improvements that reduced manual steps.</li>
+                </ul>
+              </section>
+
+              <section class="role-step">
+                <div class="role-step-header">
+                  <div class="role-meta">
+                    <h4>Information Systems / Info Center Intern</h4>
+                  </div>
+                  <div class="date-pill">January 2022 - May 2023</div>
+                </div>
+                <ul>
+                  <li>Developed custom ServiceNow applications that automated internal logistics workflows.</li>
+                  <li>Built workflow automations and ongoing enhancements for internal ServiceNow solutions.</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <!-- <article class="experience-card reveal">
+            <div class="experience-header">
+              <div class="role-meta">
+                <h3>ArcBest</h3>
+                <p>Carrier Sales Support Specialist</p>
+                <p>Fort Smith, AR</p>
+              </div>
+              <div class="date-pill">January 2021 to January 2022</div>
+            </div>
             <ul>
-              <li>Developed and supported full-stack applications using .NET (C#), Vue.js, SQL, Salesforce (Apex,
-                SOQL), and ServiceNow.</li>
-              <li>Built and integrated REST APIs for automation and platform connectivity.</li>
-              <li>Supported Customer Service and Sales Operations teams, directly impacting customer experience and revenue-generating processes.</li>
-              <li>Owned enhancements and stability of systems critical to customer retention and sales performance.</li>
-            </ul>
-          </div>
-          <div class="timeline-event">
-            <span class="timeline-date">May 2023 - Oct 2025</span>
-            <p>Product Support Specialist I</p>
-            <ul>
-              <li>Maintained, enhanced, and developed ServiceNow CSM and ITSM applications for Customer Service and internal IT teams.</li>
-              <li>Developed and supported full-stack applications using .NET (C#), Vue.js, SQL, and ServiceNow to support business needs.</li>
-              <li>Led Agile ceremonies as Scrum Master, driving team velocity and sprint outcomes.</li>
-              <li>Supported workflows and tooling for Customer Service operations, improving case handling and operational efficiency.</li>
-            </ul>
-          </div>
-          <div class="timeline-event">
-            <span class="timeline-date">Jan 2022 - May 2023</span>
-            <p>Information Systems / Info Center Student Worker</p>
-            <ul>
-              <li>Created custom ServiceNow applications to support ABF and ArcBest operations.</li>
-              <li>Streamlined workflows to boost efficiency and user satisfaction.</li>
-              <li>Provided ongoing support and enhancements for key ServiceNow solutions.</li>
-            </ul>
-          </div>
+              <li>Resolved shipment disruptions with operations teams, improving delivery reliability and service performance.</li>
+              <li>Built firsthand operational context around logistics workflows, service performance, and customer expectations.</li>
+            </ul> -->
+            <article class="experience-card reveal">
+            <div class="experience-header company-header">
+              <div class="role-meta">
+                <h3>ArcBest</h3>
+                <p>Fort Smith, AR</p>
+                <p class="company-summary"></p>
+              </div>
+              <div class="date-pill">January 2021 - January 2022</div>
+            </div>
+            <div class="role-progressions">
+              <section class="role-step">
+                <div class="role-step-header">
+                  <div class="role-meta">
+                    <h4>Carrier Sales Support Specialist</h4>
+                  </div>
+                </div>
+                <ul>
+                  <li>Resolved shipment disruptions with operations teams, improving delivery reliability and service performance.</li>
+                <li>Built firsthand operational context around logistics workflows, service performance, and customer expectations.</li>
+                </ul>
+              </section>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="experience-item" data-aos="fade-up">
-        <h3>ArcBest</h3>
-        <span>Fort Smith, AR | Jan 2021 - Jan 2022</span>
-        <p>Carrier Sales Support Specialist</p>
-        <ul>
-          <li>Resolved transit issues and improved delivery reliability through cross-functional communication.</li>
-          <li>Analyzed shipment disruptions and recommended process improvements.</li>
-          <li>Gained operational experience in logistics, collaboration, and customer satisfaction.</li>
-        </ul>
+    <section class="section" id="projects">
+      <div class="site-shell">
+        <div class="section-header reveal">
+          <div class="eyebrow">Projects</div>
+          <h2>Projects I’ve worked on.</h2>
+          <p>A few examples that show how I approach workflows, product decisions, and implementation.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="card-media">
+              <img src="Assets/images/autoFarmPoster.png" alt="AutoFarm interface and research poster">
+            </div>
+            <div class="card-body">
+              <div>
+                <h3>AutoFarm</h3>
+                <p>Computer vision workflow for plant health detection and crop monitoring.</p>
+              </div>
+              <div class="stack">
+                <span>React</span>
+                <span>Flask</span>
+                <span>Python</span>
+                <span>Featured</span>
+              </div>
+              <ul>
+                <li>Built a React and Flask interface for uploading images and viewing plant analysis results.</li>
+                <li>Implemented image-processing logic for leaf count, color analysis, and growth-stage detection.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://www.linkedin.com/pulse/autofarm-autonomous-crop-growth-anomaly-weston-graham?utm_source=share&utm_medium=guest_desktop&utm_campaign=copy"
+                  target="_blank" rel="noreferrer">Article</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-media">
+              <img src="Assets/images/DSCMPoster2.jpg" alt="Dance Studio Costume Manager preview">
+            </div>
+            <div class="card-body">
+              <div>
+                <h3>Dance Studio Costume Manager</h3>
+                <p>Workflow tool for capturing measurements and converting them into vendor-specific costume sizes.</p>
+              </div>
+              <div class="stack">
+                <span>React</span>
+                <span>Supabase</span>
+                <span>Tailwind CSS</span>
+                <span>Featured</span>
+              </div>
+              <ul>
+                <li>Built a web app that organizes measurement records and supports faster costume ordering prep.</li>
+                <li>Added automatic size conversions tailored to major costume suppliers, reducing manual lookups.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://dance-studio-costume-manager.vercel.app/" target="_blank" rel="noreferrer">Live</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-media">
+              <img src="Assets/images/AttitudesPoster.jpg" alt="Attitudes Performing Arts website redesign preview">
+            </div>
+            <div class="card-body">
+              <div>
+                <h3>Attitudes Performing Arts Website Redesign</h3>
+                <p>Website redesign focused on clearer class discovery and stronger calls to action.</p>
+              </div>
+              <div class="stack">
+                <span>Web Design</span>
+                <span>Responsive UI</span>
+                <span>Content Strategy</span>
+              </div>
+              <ul>
+                <li>Redesigned site structure and user flow to make schedules, classes, and enrollment information easier to find.</li>
+                <li>Improved mobile usability and clarified the conversion path for new inquiries.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://www.attitudesperformingarts.com/" target="_blank" rel="noreferrer">Visit site</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-media">
+              <img src="Assets/images/projectTemplate.png" alt="Placeholder preview for current project">
+            </div>
+            <div class="card-body">
+              <div>
+                <h3>Currently Building</h3>
+                <p>Internal-tool style applications focused on better workflow automation and cleaner product design.</p>
+              </div>
+              <div class="stack">
+                <span>Full-Stack</span>
+                <span>Workflow Automation</span>
+                <span>Product UI</span>
+              </div>
+              <ul>
+                <li>Exploring new tooling patterns for service-oriented operational software.</li>
+                <li>Currently building the next wave of practical business software projects.</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/westongraham" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="site-shell">
+        <div class="section-header reveal">
+          <div class="eyebrow">Background</div>
+          <h2>Education and certifications.</h2>
+        </div>
+
+        <div class="education-grid">
+          <article class="education-card reveal">
+            <img src="Assets/images/UAFSLogo.png" alt="University diploma">
+            <div>
+              <h3>Bachelor of Science Information Technology, Programming</h3>
+              <p>University of Arkansas Fort Smith</p>
+            </div>
+            <p>Relevant focus: AI, data structures, distributed systems, and computer architecture.</p>
+          </article>
+
+          <article class="education-card reveal">
+            <img src="Assets/images/CertifiedSAFe6ScrumMasterCert.jpg" alt="SAFe Scrum Master certification">
+            <div>
+              <h3>SAFe 6 Scrum Master</h3>
+              <p>Scaled Agile Framework Certification</p>
+            </div>
+            <p>Agile facilitation, Scrum ceremonies, and cross-team delivery alignment.</p>
+            <div class="project-links">
+              <a href="Assets/files/CertifiedSAFe6ScrumMaster.pdf" target="_blank" rel="noreferrer">View certificate</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="site-shell">
+        <div class="section-header reveal">
+          <div class="eyebrow">Contact</div>
+          <h2>Let’s talk about what you’re building.</h2>
+          <p>I’m especially interested in engineering work that improves internal systems and customer operations.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card reveal">
+            <h3>Get in touch</h3>
+            <p>I’m interested in software engineering work involving full-stack systems, integrations, production software, and practical problem solving.</p>
+            <div class="contact-links">
+              <a href="mailto:westongraham11@gmail.com">westongraham11@gmail.com</a>
+              <a href="https://www.linkedin.com/in/westongraham" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://github.com/westongraham" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="site-shell">
+      <p>&copy; 2026 Weston Graham.</p>
     </div>
-  </section>
-
-  <!-- Education & Certifications -->
-  <section id="education" class="section">
-    <div class="container">
-      <h2>Education & Certifications</h2>
-      <div class="education-container" data-aos="fade-up">
-        <div class="education-text">
-          <h3>University of Arkansas Fort Smith</h3>
-          <p>Bachelor of Science in Information Technology - Programming</p>
-          <p>May 2023</p>
-          <p>Relevant Coursework: AI, Data Structures, Distributed Systems, Computer Architecture, Discrete Math</p>
-          <p>Project: Developed AutoFarm, a computer vision system using deep learning to track plant health and growth
-            stages. Designed a user-friendly web interface with React and Flask, to enhance crop yield through automated
-            monitoring.</p>
-        </div>
-
-        <div class="certifications">
-          <img src="Assets/images/diploma.jpg" alt="Bachelor's Diploma" class="edu-img">
-        </div>
-      </div>
-      <div class="education-container" data-aos="fade-up">
-        <div class="education-text">
-          <h3>Scaled Agile Framework (SAFe)</h3>
-          <p>Certified SAFe 6 Scrum Master</p>
-          <p>Demonstrates expertise in leading Agile teams, facilitating Scrum ceremonies, and supporting program-level
-            alignment in large-scale Agile environments.</p>
-        </div>
-        <div class="certifications">
-          <a href="Assets/files/CertifiedSAFe6ScrumMaster.pdf" target="_blank">
-            <img src="Assets/images/CertifiedSAFe6ScrumMasterCert.jpg" alt="Scrum Master Certification" class="edu-img">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="section">
-    <div class="container">
-      <h2 data-aos="fade-up">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill" data-aos="fade-up"><i class="fab fa-java"></i> Java</div>
-        <div class="skill" data-aos="fade-up"><i class="fab fa-python"></i> Python</div>
-        <div class="skill" data-aos="fade-up"><i class="fas fa-database"></i> SQL</div>
-        <div class="skill" data-aos="fade-up"><i class="fab fa-html5"></i> HTML/CSS</div>
-        <div class="skill" data-aos="fade-up"><i class="fab fa-js-square"></i> JavaScript</div>
-        <div class="skill" data-aos="fade-up"><i class="fab fa-vuejs"></i> Vue.js</div>
-        <div class="skill" data-aos="fade-up"><i class="fab fa-microsoft"></i> .NET (C#)</div>
-        <div class="skill" data-aos="fade-up"><i class="fas fa-network-wired"></i> REST APIs</div>
-        <div class="skill" data-aos="fade-up"><i class="fas fa-project-diagram"></i> Agile / Scrum / SAFe</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section class="section" id="projects">
-    <div class="container" data-aos="fade-up">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="Assets/images/autoFarmPoster.png" alt="AutoFarm Project Poster">
-          <h4>AutoFarm</h4>
-          <p>Computer vision system to track plant health and growth stages with React and Flask web interface.</p>
-          <div class="project-links">
-            <a href="https://www.linkedin.com/pulse/autofarm-autonomous-crop-growth-anomaly-weston-graham?utm_source=share&utm_medium=guest_desktop&utm_campaign=copy"
-              target="_blank"><i class="fas fa-file"></i> Article</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="../Assets/images/DSCMPoster2.jpg" alt="Dance Studio Costume Manager">
-          <h4>Dance Studio Costume Manager</h4>
-          <p>Web app for managing dancer measurements with automatic costume size conversions for major suppliers. 
-            Built with React, Supabase, and Tailwind CSS.</p>
-          <div class="project-links">
-            <a href="https://dance-studio-costume-manager.vercel.app/" target="_blank">Live</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="../Assets/images/AttitudesPoster.jpg" alt="Attitudes Performing Arts Website Redesign">
-          <h4>Attitudes Performing Arts Website Redesign</h4>
-          <p>Redesigned and rebuilt the website for a local performing arts studio to improve usability, modernize the design, 
-            and clearly communicate class offerings, schedules, and enrollment. Focused on responsive design, 
-            streamlined navigation, and stronger calls to action to support student onboarding and business growth.</p>
-          <div class="project-links">
-            <a href="https://www.attitudesperformingarts.com/" target="_blank">Visit Website</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="../Assets/images/projectTemplate.png" alt="Project 2">
-          <h4>Coming Soon</h4>
-          <p>Always learning and developing. Stay tuned for updates on future projects!</p>
-          <div class="project-links">
-            <a href="https://github.com/westongraham" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="#">Live</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="contact-container" data-aos="fade-up">
-        <ul class="contact-list">
-          <li>Email: <a href="mailto:westongraham11@gmail.com">westongraham11@gmail.com</a></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/westongraham" target="_blank">in/westongraham</a></li>
-          <li>Website: <a href="https://westongraham.github.io" target="_blank">westongraham.github.io</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
-
-  <!-- Floating Hire Me Button -->
-  <a href="mailto:westongraham11@gmail.com" id="hire-me-btn"><i class="fas fa-envelope"></i> Contact Me</a>
-
-  <!-- Footer -->
-  <footer data-aos="fade-up">
-    <p>© 2026 Weston Graham. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+    const themeToggle = document.getElementById("theme-toggle");
+    const root = document.documentElement;
+    const storedTheme = localStorage.getItem("theme-preference") || "light";
 
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const darkToggle = document.getElementById('dark-toggle');
-    const backToTop = document.getElementById('back-to-top');
-    const hireMeBtn = document.getElementById('hire-me-btn');
-    const navItems = document.querySelectorAll('.nav-links a');
-    const sections = document.querySelectorAll('section');
+    const applyTheme = (theme) => {
+      root.dataset.theme = theme;
+      const nextTheme = theme === "dark" ? "light" : "dark";
+      themeToggle.setAttribute("aria-label", "Switch to " + nextTheme + " mode");
+      themeToggle.setAttribute("title", "Switch to " + nextTheme + " mode");
+    };
 
-    // Hamburger toggle
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      hamburger.classList.toggle('open');
+    applyTheme(storedTheme);
+
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+      localStorage.setItem("theme-preference", nextTheme);
+      applyTheme(nextTheme);
     });
 
-    // Dark mode toggle
-    darkToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      darkToggle.querySelector('i').classList.toggle('fa-sun');
-      darkToggle.querySelector('i').classList.toggle('fa-moon');
-    });
+    const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
+    const sections = navLinks
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
 
-    // Smooth scroll with navbar offset
-    navItems.forEach(link => {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        const headerOffset = document.querySelector('.navbar').offsetHeight;
-        const elementPosition = target.offsetTop;
-        const offsetPosition = elementPosition - headerOffset;
+    const setActiveLink = () => {
+      const offset = window.scrollY + 120;
+      let currentId = "";
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('open');
-      });
-    });
-
-    // Active section highlighting
-    window.addEventListener('scroll', () => {
-      let currentSection = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        const sectionHeight = section.offsetHeight;
-        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-          currentSection = section.getAttribute('id');
-        }
-      });
-      navItems.forEach(link => {
-        link.classList.remove('active-link');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-          link.classList.add('active-link');
+      sections.forEach((section) => {
+        if (offset >= section.offsetTop) {
+          currentId = section.id;
         }
       });
 
-      // Back to top button
-      backToTop.style.display = window.scrollY > 500 ? 'flex' : 'none';
+      navLinks.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === "#" + currentId);
+      });
+    };
 
-      // Hire Me button
-      hireMeBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.16
     });
 
-    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    document.querySelectorAll(".reveal").forEach((element, index) => {
+      element.style.transitionDelay = Math.min(index * 40, 240) + "ms";
+      observer.observe(element);
+    });
 
-    // Hero typing effect
-    // Hero typing effect
-const heroText = document.getElementById('typing-text');
-const staticWord = "I ";  // <-- This will always stay
-const dynamicWords = [
-  'build clean, scalable, and impactful software solutions.',
-  'turn complex challenges into simple, user-friendly code.'
-];
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const target = document.querySelector(link.getAttribute("href"));
+        if (!target) {
+          return;
+        }
 
-let wordIndex = 0;
-let charIndex = 0;
-let typing = true;
+        event.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 88;
+        window.scrollTo({ top, behavior: "smooth" });
+      });
+    });
 
-function typeEffect() {
-  const currentWord = dynamicWords[wordIndex];
-
-  if (typing) {
-    heroText.textContent = `${staticWord}${currentWord.slice(0, charIndex + 1)}`;
-    charIndex++;
-    if (charIndex === currentWord.length) {
-      typing = false;
-      setTimeout(typeEffect, 1500); // pause at full word
-      return;
-    }
-  } else if (!typing && charIndex === 0) {
-    heroText.textContent = staticWord; // static word stays
-    typing = true;
-    wordIndex = (wordIndex + 1) % dynamicWords.length;
-    setTimeout(typeEffect, 200);
-    return;
-  } else {
-    heroText.textContent = `${staticWord}${currentWord.slice(0, charIndex - 1)}`;
-    charIndex--;
-    if (charIndex === 0) {
-      typing = true;
-      wordIndex = (wordIndex + 1) % dynamicWords.length;
-    }
-  }
-  setTimeout(typeEffect, typing ? 100 : 100);
-}
-
-
-    typeEffect();
+    window.addEventListener("scroll", setActiveLink, { passive: true });
+    window.addEventListener("load", setActiveLink);
   </script>
 </body>
 
-
 </html>
-
-
-
-
